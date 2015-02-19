@@ -49,13 +49,13 @@ abstract class AbstractMiddlewareAdapter implements HttpKernelInterface {
     /**
      * Instantiates the adapted class, you should probably override this method as you need
      *
-     * @param HttpKernelInterface $app
+     * @param HttpKernelInterface $nextMiddleware
      * @return mixed
      */
-    protected function getClassAdapterInstance(HttpKernelInterface $app)
+    protected function getClassAdapterInstance(HttpKernelInterface $nextMiddleware)
     {
         $adaptedClass = $this->adaptedClass;
-        return new $adaptedClass($app);
+        return new $adaptedClass($nextMiddleware);
     }
 
     /**
