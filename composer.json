@@ -1,0 +1,24 @@
+{
+    "name": "winglian/middleware-adapter",
+    "description": "Adapter for HttpKernelInterface middlewares to be used with Laravel",
+    "keywords": ["stack", "middleware"],
+    "homepage": "https://github.com/winglian/middleware-adapter",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Wing Lian",
+            "email": "wing.lian@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.2",
+        "symfony/http-foundation": "2.6.*",
+        "symfony/http-kernel": "2.6.*",
+        "illuminate/http": "5.0.*",
+        "illuminate/foundation": "5.0.*"
+    },
+    "autoload": {
+        "psr-4": { "Winglian\\MiddlewareAdapter": "src/" }
+    }
+}
