@@ -1,7 +1,7 @@
 {
     "name": "winglian/middleware-adapter",
     "description": "Adapter for HttpKernelInterface middlewares to be used with Laravel",
-    "keywords": ["stack", "middleware"],
+    "keywords": ["stack", "middleware", "laravel", "stackphp"],
     "homepage": "https://github.com/winglian/middleware-adapter",
     "type": "library",
     "license": "MIT",
