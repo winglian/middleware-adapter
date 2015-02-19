@@ -32,14 +32,6 @@ abstract class AbstractMiddlewareAdapter implements HttpKernelInterface {
     protected $next;
 
     /**
-     * @param HttpKernelInterface|Application $app
-     */
-    public function __construct(Application $app)
-    {
-        $this->app = $app;
-    }
-
-    /**
      * Used to bind the next laravel middleware in the stack to the adapter
      *
      * @param callable $next
@@ -76,7 +68,7 @@ abstract class AbstractMiddlewareAdapter implements HttpKernelInterface {
     protected function handleLaravel(Request $request, Closure $next)
     {
         // wrap the Closure in an HttpKernelInterface type Middleware
-        $closureMiddleware = new static($this->app);
+        $closureMiddleware = new static;
         $closureMiddleware->setNext($next);
 
         $handler = $this->getClassAdapterInstance($closureMiddleware);
