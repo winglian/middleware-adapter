@@ -68,11 +68,24 @@ abstract class AbstractMiddlewareAdapter implements HttpKernelInterface {
     protected function handleLaravel(Request $request, Closure $next)
     {
         // wrap the Closure in an HttpKernelInterface type Middleware
-        $closureMiddleware = new static;
-        $closureMiddleware->setNext($next);
+        $closureMiddleware = $this->wrapClosureInMiddleware($next);
 
         $handler = $this->getClassAdapterInstance($closureMiddleware);
         return $handler->handle($request);
+    }
+
+    /**
+     * wrap the closure into it's own Middleware
+     *
+     * @param callable $next
+     * @return static
+     */
+    protected function wrapClosureInMiddleware(Closure $next)
+    {
+        $closureMiddleware = new static;
+        $closureMiddleware->setNext($next);
+
+        return $closureMiddleware;
     }
 
     /**
