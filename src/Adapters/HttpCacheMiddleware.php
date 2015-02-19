@@ -1,5 +1,6 @@
-<?php namespace Winglian\MiddlewareAdapter;
+<?php namespace Winglian\MiddlewareAdapter\Adapters;
 
+use Winglian\MiddlewareAdapter\AbstractMiddlewareAdapter;
 use Symfony\Component\HttpKernel\HttpKernelInterface;
 
 class HttpCache extends AbstractMiddlewareAdapter {
